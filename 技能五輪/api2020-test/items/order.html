@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>予約</title>
+<style>
+input, select { margin-bottom: 20px; }
+#deliver { display: none; }
+</style>
+<script>
+
+function showAll() {
+	const elem = document.querySelector("#deliver");
+	elem.style.display = "block";
+}
+
+function hideAll() {
+	const elem = document.querySelector("#deliver");
+	elem.style.display = "none";
+}
+</script>
+</head>
+<body>
+<h1>予約</h1>
+<form method="post" action="./index.php">
+	<div>
+	料理を選択
+	<select name="order" required>
+		<option value="カツカレー">カツカレー</option>
+		<option value="ハンバーグカレー">ハンバーグカレー</option>
+		<option value="ビーフカレー">ビーフカレー</option>
+		<option value="ポークカレー">ポークカレー</option>
+		<option value="チキンカレー">チキンカレー</option>
+		<option value="カレーうどん">カレーうどん</option>
+	</select>
+	</div>
+	
+	<div>
+	数量
+	<!--
+	<select name="number" required>
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+		<option value="4">4</option>
+		<option value="5">5</option>
+	</select>
+	-->
+	
+	<input type="number" name="number" step="1" min="1" max="10">
+	
+	</div>
+	
+	<div>
+	名前
+	<input type="text" name="yourname" required>
+	</div>
+	
+	<div>
+	お渡し方法
+		<input type="radio" name="way" value="get" checked onchange="hideAll()">受け取りに行く
+		<input type="radio" name="way" value="delivery" onchange="showAll()">配達希望
+	</div>
+	
+	<div id="deliver">
+	<div>
+	配達日
+	<input type="date" id="date" name="date" required>
+	</div>
+	
+	<div>
+	配達時刻
+	<input type="time" name="time" required>
+	</div>
+	
+	
+	<div>
+	住所
+	<input type="text" id="address" name="address" required>
+	</div>
+	
+	</div>
+	
+	<input type="submit">
+	<input type="reset">
+
+</form>
+
+</body>
+</html>

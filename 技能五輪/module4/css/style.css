@@ -1,0 +1,34 @@
+.navbar{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	
+	padding: 0px;
+	
+	width: 100%;
+	z-index: 10000;
+}
+.col-md-4{
+	border:1px solid #333333;
+	background-color: #F4F4D0;
+}
+.col-m4{
+	color: #F4F4D0;
+}
+.link-button{
+	display: inline-block;
+	text-align: center;
+}
+.link-button img{
+	width: 20%;
+	height: 20%;
+}
+.container img{
+	width: 50%;
+}
+.container {
+	background-color: #07032F;
+}
+.text-center{
+ font-size: 3vw;	
+}

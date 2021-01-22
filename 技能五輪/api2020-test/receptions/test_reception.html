@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>LINK</title>
+<script src="jquery-3.2.1.js"></script>
+<script type="text/javascript">
+$(function() {
+
+	$("select").change(function() {
+		var id = $(this).val();
+		$("h2").empty().append(id + "を選択");
+		console.log(id);
+		var path = "./users/" + id;
+		$("form").attr({"action": "./users/" + id+ "/"});
+	});
+	
+	
+	$("#sub").click(function() {
+		$("form").submit();
+	});
+	
+});
+</script>
+<style>
+input, select { margin-bottom: 20px; }
+table, table tr th, table tr td { border: 1px solid #333; border-collapse: collapse; background-color: #666; color: #FFF; padding: 6px;}
+table tr td { background-color: #FFF; color: #000; }
+</style>
+</head>
+<body>
+<h1>予約（users/{user id}へPOSTアクセス）</h1>
+<form method="post" action="./users/1/">
+	
+	顧客ID番号<select name="id" id="id">
+		<option selected>ひとつ選択</option>
+		<option value="1">1</option>
+		<option value="2">2</option>
+		<option value="3">3</option>
+	</select>
+	
+	<input type="button" id="sub" value="Pointを増やす">
+	
+	<!--
+	<input type="submit">
+	-->
+	<input type="reset">
+</form>
+<h2></h2>
+
+<table>
+	<tr><th>ユーザ</th><th>デフォルトのポイント数</th></tr>
+	<tr><td>ユーザ 1</td><td>37 point</td></tr>
+	<tr><td>ユーザ 2</td><td>18 point</td></tr>
+	<tr><td>ユーザ 3</td><td>3 point</td></tr>
+</table>
+</body>
+</html>

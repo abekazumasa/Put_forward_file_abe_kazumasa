@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: f0f351ad53c76e545bc0153eb8c9b709
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - startPrefab: {fileID: 9159567799283107882, guid: 51534770ad5e68b40b10dd53f5028aaa,
+      type: 3}
+  - gameOverPrefab: {fileID: 3859416337368561037, guid: 2e40c4a340dcd7c42a705d0549d669fe,
+      type: 3}
+  - stageClearPrefab: {fileID: 1856916964768413685, guid: e1cf4e3f0345bd646a843ec468f5f2c2,
+      type: 3}
+  - canvasRoot: {instanceID: 0}
+  - boidSpawner: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

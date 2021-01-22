@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script type="text/javascript" src="../jquery-3.2.1.js"></script>
+<script type="text/javascript">
+$(function() {
+
+
+	$.ajax({
+		type : "get",
+		url: "json.php",
+		contentType: "application/JSON",
+		dataType: "JSON",
+
+		success: function(data) {
+		//	console.log(data);
+		//	$("#json").append(JSON.stringify(data));
+				$("h1").append("接続成功");
+						
+		//　-----------------------------------------------------------------------
+				const elem_h1 = document.querySelector("h1");
+				const elem_div = document.createElement("div");
+				
+		//	elem_h1.appendChild(elem_div);												// ←テスト用（取得している要素内に要素をつくる）
+		
+				elem_h1.parentNode.insertBefore(elem_div, elem_div.nextSibling);			// 取得している要素の後ろに次の要素をつくる
+			
+				
+				elem_div.style.backgroundColor = "#FEE";
+		//	elem_div.innerHTML = "Test~~~!";											// ←テスト用
+		//	elem_div.classList.add("~~~");												// ←クラスを指定
+				
+				elem_div.setAttribute("id", "json");									// ←IDを指定
+		//　-----------------------------------------------------------------------
+				
+				
+				// JSONの配列場合（jQuery $.each） //////////////////////
+				$.each(data, function(i) {
+					console.log(data.length);
+					$("#json").append("<section><h1>" + data[i].id + "</h1><dl><dt>" + data[i].name + "</dt><dd>" + data[i].address + "</dd><dd>" + data[i].price + "</dd><dd>" + data[i].latitude + "<br>" + data[i].longitude) + "</dd><dt></section>";
+				});
+				
+		},
+		
+		error : function(data) {
+			//	console.log(JSON.stringify(data));
+			$("#status").html("接続失敗");
+		}
+		
+	});
+
+});
+</script>
+<style>
+#wrap {
+	width: 70%;
+}
+section {
+	border-bottom: 1px dotted #33A;
+	padding: 10px;
+	margin: 10px;
+}
+</style>
+</head>
+<body>
+<div id="wrap">
+	<h1>JSON</h1>
+	<!--
+	<div id="json"></div>
+	-->
+</div>
+</body>
+</html>
